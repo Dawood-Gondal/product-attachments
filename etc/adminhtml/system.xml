@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    M2Commerce Enterprise
+ * @package     M2Commerce_ProductAttachments
+ * @copyright   Copyright (c) 2023 M2Commerce Enterprise
+ * @author      dawoodgondaldev@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="commerce_enterprise" translate="label" sortOrder="400">
+            <label>Commerce Enterprise</label>
+        </tab>
+        <section id="product_attachments" sortOrder="100" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>commerce_enterprise</tab>
+            <label>Product Attachments</label>
+            <resource>M2Commerce_ProductAttachments::productAttachmentsConfig</resource>
+            <group id="general" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="tab_label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Product Tab Label</label>
+                    <comment><![CDATA[This label will be displayed on storefront's product details tab.]]></comment>
+                </field>
+                <field id="allowed_extensions" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Allowed File Extensions</label>
+                    <source_model>M2Commerce\ProductAttachments\Model\Config\Source\FileType</source_model>
+                    <validate>required-entry validate-select</validate>
+                    <comment><![CDATA[Upload will only allow attachment files with these extensions.]]></comment>
+                </field>
+            </group>
+        </section>
+
+    </system>
+</config>

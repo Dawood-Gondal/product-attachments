@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    M2Commerce Enterprise
+ * @package     M2Commerce_ProductAttachments
+ * @copyright   Copyright (c) 2023 M2Commerce Enterprise
+ * @author      dawoodgondaldev@gmail.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="M2Commerce\ProductAttachments\Block\Product\View\Attachment" name="m2c.product.attachment" template="M2Commerce_ProductAttachments::product/view/attachment.phtml"
+                   group="detailed_info" ifconfig="product_attachments/general/enabled">
+                <arguments>
+                    <argument name="title" xsi:type="helper" helper="M2Commerce\ProductAttachments\Helper\Data::getAttachmentTabLabel" />
+                    <argument name="sort_order" xsi:type="string">10</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

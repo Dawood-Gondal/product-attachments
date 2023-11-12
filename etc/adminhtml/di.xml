@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    M2Commerce Enterprise
+ * @package     M2Commerce_ProductAttachments
+ * @copyright   Copyright (c) 2023 M2Commerce Enterprise
+ * @author      dawoodgondaldev@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="m2c_attachment_file" xsi:type="array">
+                    <item name="class" xsi:type="string">M2Commerce\ProductAttachments\Ui\DataProvider\Product\Form\Modifier\File</item>
+                    <item name="sortOrder" xsi:type="number">1000</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
